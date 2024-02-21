@@ -1,38 +1,7 @@
 import * as React from "react";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import Menu from "@mui/material/Menu";
-import MenuIcon from "@mui/icons-material/Menu";
-import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
-import Tooltip from "@mui/material/Tooltip";
-import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
 import logo from "../img/orderNow.png";
 
-const pages = ["Home", "Check Out", "Contact Us"];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
 export default function NavBar() {
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
-
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
   return (
     <div className="bg-white border-gray-200 dark:bg-slate-800 shadow-md lg:px-10">
       <div className="container">
@@ -75,7 +44,7 @@ export default function NavBar() {
           </div>
 
           <a
-            href="/dashboard"
+            href="#"
             className="max-lg:flex items-center space-x-3 rtl:space-x-reverse hidden"
           >
             <img src={logo} className="h-9 max-sm:h-12 " alt="logo" />
