@@ -1,4 +1,5 @@
-import * as React from "react";
+import React from "react";
+import { NavLink } from "react-router-dom";
 import logo from "../img/orderNow.png";
 
 export default function NavBar() {
@@ -33,27 +34,51 @@ export default function NavBar() {
             </button>
 
             <a
-              href="#"
+              href="/"
               className="lg:flex items-center space-x-3 rtl:space-x-reverse hidden"
             >
               <img src={logo} className="h-12" alt="Flowbite Logo" />
-              <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+              <span className="self-center font-serif text-2xl font-semibold whitespace-nowrap dark:text-white">
                 OrderNow
               </span>
             </a>
           </div>
 
           <a
-            href="#"
+            href="/"
             className="max-lg:flex items-center space-x-3 rtl:space-x-reverse hidden"
           >
-            <img src={logo} className="h-9 max-sm:h-12 " alt="logo" />
-            <span className="self-center  max-sm:hidden  text-2xl font-semibold whitespace-nowrap dark:text-white">
+            <img src={logo} className="h-9 max-sm:h-12 w-24" alt="logo" />
+            <span className="self-center  max-sm:hidden  text-2xl font-semibold whitespace-nowrap dark:text-white font-serif">
               OrderNow
             </span>
           </a>
+          <div className="w-full justify-center lg:flex hidden">
+            <ul className="flex cursor-pointer navbar-ul main-nav">
+              <NavLink to="/">
+                <li className="nav-link">Home</li>
+              </NavLink>
+
+              <NavLink to="blog">
+                <li className="nav-link">Blog</li>
+              </NavLink>
+
+              <NavLink to="contactus">
+                <li className="nav-link">Contact Us</li>
+              </NavLink>
+              <li className="nav-link">
+                <a>Cart</a>
+              </li>
+            </ul>
+          </div>
 
           <div className="navbar-end">
+            <a
+              href="/login"
+              className="btn min-h-full  h-full rounded-full hover:bg-slate-600 hover:text-slate-100 border-slate-600 bg-transparent text-slate-600 py-3 px-6"
+            >
+              Login/Registration
+            </a>
             <div className="dropdown dropdown-end">
               <div
                 tabIndex={0}
@@ -69,13 +94,13 @@ export default function NavBar() {
               </div>
               <ul
                 tabIndex={0}
-                className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
+                className="mt-3 z-[1] border border-slate-100 p-2 shadow-[-5px_4px_31px_-12px] menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
               >
                 <li>
-                  <a href="#" className="justify-between">
-                    Profile
-                    <span className="badge">New</span>
-                  </a>
+                  <NavLink to="profile">Profile</NavLink>
+                </li>
+                <li>
+                  <NavLink to="changepwd">Change Password</NavLink>
                 </li>
                 <li>
                   <a>Logout</a>
